@@ -1,3 +1,4 @@
+// Get references to DOM elements
 const question = document.getElementById('question');
 const choices = Array.from(document.getElementsByClassName('choice-text'));
 const progressText = document.getElementById('progressText');
@@ -5,6 +6,8 @@ const scoreText = document.getElementById('score');
 const progressBarFull = document.getElementById('progressBarFull');
 const loader = document.getElementById('loader');
 const game = document.getElementById('game');
+
+// Initialize variables
 let currentQuestion = {};
 let acceptingAnswers = false;
 let score = 0;
@@ -13,6 +16,7 @@ let availableQuesions = [];
 
 let questions = [];
 
+// Fetch questions from the API
 fetch(
     'https://opentdb.com/api.php?amount=20&difficulty=medium'
 )
@@ -46,10 +50,11 @@ fetch(
         console.error(err);
     });
 
-//CONSTANTS
+// CONSTANTS
 const CORRECT_BONUS = 1;
 const MAX_QUESTIONS = 10;
 
+// Function to start the game
 startGame = () => {
     questionCounter = 0;
     score = 0;
@@ -59,15 +64,16 @@ startGame = () => {
     loader.classList.add('hidden');
 };
 
+// Function to load a new question
 getNewQuestion = () => {
     if (availableQuesions.length === 0 || questionCounter >= MAX_QUESTIONS) {
         localStorage.setItem('mostRecentScore', score);
-        //go to the end page
+        // Go to the end page
         return window.location.assign('end.html');
     }
     questionCounter++;
     progressText.innerText = `Question ${questionCounter}/${MAX_QUESTIONS}`;
-    //Update the progress bar
+    // Update the progress bar
     progressBarFull.style.width = `${(questionCounter / MAX_QUESTIONS) * 100}%`;
 
     const questionIndex = Math.floor(Math.random() * availableQuesions.length);
@@ -83,6 +89,7 @@ getNewQuestion = () => {
     acceptingAnswers = true;
 };
 
+// Add event listeners to each choice
 choices.forEach((choice) => {
     choice.addEventListener('click', (e) => {
         if (!acceptingAnswers) return;
@@ -107,8 +114,10 @@ choices.forEach((choice) => {
     });
 });
 
+// Function to increment the score
 incrementScore = (num) => {
     score += num;
     scoreText.innerText = score;
 };
+
 
