@@ -1,38 +1,52 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <!-- Specifies the character encoding for the HTML document -->
     <meta charset="UTF-8" />
+    <!-- Sets the viewport to make the website responsive -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Instructs the browser to use the latest compatible mode -->
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <!-- Title of the document -->
     <title>Congrats!</title>
+    <!-- Link to the external CSS stylesheet -->
     <link rel="stylesheet" href="app.css" />
   </head>
   <body>
+    <!-- Main container div -->
     <div class="container">
+      <!-- Flex container for centering content -->
       <div id="end" class="flex-center flex-column">
+        <!-- Heading element for the final score -->
         <h1 id="finalScore"></h1>
+        <!-- Form for submitting the high score -->
         <form>
+          <!-- Input field for entering the username -->
           <input
             type="text"
             name="username"
             id="username"
             placeholder="Your Name Here"
           />
+          <!-- Button for saving the score, initially disabled -->
           <button
             type="submit"
             class="btn"
             id="saveScoreBtn"
             onclick="saveHighScore(event)"
-            disabled=
+            disabled
           > 
-          
             Save!
           </button>
         </form>
+        <!-- Link to play the game again -->
         <a class="btn" href="game.html">Play Again!</a>
+        <!-- Link to go back to the home page -->
         <a class="btn" href="index.html">Go Home?</a>
       </div>
     </div>
+    <!-- Link to the external JavaScript file -->
     <script src="end.js"></script>
   </body>
 </html>
+
