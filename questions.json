@@ -1,26 +1,36 @@
 [
   {
+    // First question object
     "question": "Inside which HTML element do we put the JavaScript??",
+    // Choices for the first question
     "choice1": "<script>",
     "choice2": "<javascript>",
     "choice3": "<js>",
     "choice4": "<scripting>",
+    // Correct answer for the first question
     "answer": 1
   },
   {
+    // Second question object
     "question": "What is the correct syntax for referring to an external script called 'xxx.js'?",
+    // Choices for the second question
     "choice1": "<script href='xxx.js'>",
     "choice2": "<script name='xxx.js'>",
     "choice3": "<script src='xxx.js'>",
     "choice4": "<script file='xxx.js'>",
+    // Correct answer for the second question
     "answer": 3
   },
   {
+    // Third question object
     "question": " How do you write 'Hello World' in an alert box?",
+    // Choices for the third question
     "choice1": "msgBox('Hello World');",
     "choice2": "alertBox('Hello World');",
     "choice3": "msg('Hello World');",
     "choice4": "alert('Hello World');",
+    // Correct answer for the third question
     "answer": 4
   }
 ]
+
